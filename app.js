@@ -1,68 +1,37 @@
-//VARIABLES
-// debugger;
-// let isEmployed = true;
-// let hasApartment = false; //Boolean
-
-//String
-// let age = 29; //Number
-
-// let birthday; //undefined
-
-// let phone = null; //Null
-
-// let fullName = "Filip Jerga";
-
-// fullName = "John Green";
-
-// console.log(fullName);
-
-// console.log("Name: " + firstName + " " + lastName + " age: " + age);
-
-// console.log(birthday);
-
-// console.log(phone);
-
-//var
-// function scope
-// undefined in case i am accesing variable before declaration
-
-//let
-//block scope
-//ReferenceError in case i am accesing variable before declaration
-
-//const
-//block
-//ReferenceError in case i am accessing variable before declaration
-//const assign value only once
-
-let scope = "SCOPE!!!!";
-
-function hello() {
-  console.log("Hello World");
-}
-
 //Hoisting
 function runApp() {
-  console.log(firstName);
-  const firstName = "Filip";
+  var firstName = "Filip";
   const lastName = "Jerga";
+
+  const brand = "mercedes";
+  const type = "benz";
+  const produceYear = 1995;
+
+  const brand2 = "hyundai";
+  const type2 = "sonata";
+  const produceYear2 = 1987;
+
+  const brand3 = "ferrari";
+  const type3 = "unknown";
+  const produceYear3 = 1970;
+
+  const brand4 = "mitshubishi";
+  const type4 = "lancer";
+  const produceYear4 = 2002;
 
   const firstName2 = "John";
   const lastName2 = "Green";
 
-  if (true) {
-    var fScope = "Function Scope!";
-    let bScope = "Block Scope";
+  //display car Info
+  //params: brand, type, year
+  function displayCarInfo(brand, type, year) {
+    console.log(`${brand} - ${type} - ${year}`);
   }
 
-  console.log(fScope);
-  function sayHello(name, lname) {
-    console.log("hello" + name + " " + lname);
-  }
-
-  sayHello(firstName, lastName);
-  sayHello(firstName2, lastName2);
-  sayHello("Martha", "Doppler");
+  displayCarInfo(brand, type, produceYear);
+  displayCarInfo(brand2, type2, produceYear2);
+  displayCarInfo(brand3, type3, produceYear3);
+  displayCarInfo(brand4, type4, produceYear4);
 }
 
 runApp();
