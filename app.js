@@ -21,9 +21,15 @@
 // console.log(birthday);
 
 // console.log(phone);
+let scope = "SCOPE!!!!";
+
+function hello() {
+  console.log("Hello World");
+}
 
 function runApp() {
   debugger;
+  hello();
   const firstName = "Filip";
   const lastName = "Jerga";
 
@@ -31,7 +37,9 @@ function runApp() {
   const lastName2 = "Green";
 
   function sayHello(name, lname) {
-    console.log("Hello " + name + " " + lname);
+    const firstName3 = "현제";
+    hello();
+    console.log(firstName3);
   }
 
   sayHello(firstName, lastName);
