@@ -1,43 +1,32 @@
-//Hoisting
+class Car {
+  brand = "";
+  type = "";
+  produceYear = null;
+
+  constructor(brand, type, produceYear)
+
+  displayInfo() {
+    console.log(`${this.brand} ${this.type} - ${this.produceYear}`);
+  }
+}
+
 function runApp() {
-  var firstName = "Filip";
-  const lastName = "Jerga";
+  const car = new Car();
 
-  const car = {
-    brand: "mercedes",
-    type: "benz",
-    produceYear: 1995,
-    displayInfo: function() {
-      console.log(`${this.brand} ${this.type} - ${this.produceYear}`);
-    },
-    getThis: function() {
-      return this;
-    }
-  };
-
-  console.log(car === car.getThis());
+//   car.brand = "mercedes";
+//   car.type = "benz";
+//   car.produceYear = 1995;
 
   const car2 = {
     brand: "mitshubishi",
     type: "lancer",
-    produceYear: 2002
+    produceYear: 2002,
+    displayInfo: function() {
+      console.log(`${this.brand} ${this.type} - ${this.produceYear}`);
+    }
   };
-
-  const firstName2 = "John";
-  const lastName2 = "Green";
-
-  //display car Info
-  //params: brand, type, year
-  function displayCarInfo(car) {
-    console.log(`${car.brand} - ${car.type} - ${car.produceYear}`);
-    return function() {
-      console.log("I AM FUNCTION");
-    };
-  }
-
-  console.log(displayCarInfo(car));
-  const test = displayCarInfo(car2);
-  test();
+  car.displayInfo();
+  car2.displayInfo();
 }
 
 runApp();
