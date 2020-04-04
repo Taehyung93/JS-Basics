@@ -9,10 +9,13 @@ function runApp() {
     produceYear: 1995,
     displayInfo: function() {
       console.log(`${this.brand} ${this.type} - ${this.produceYear}`);
+    },
+    getThis: function() {
+      return this;
     }
   };
 
- 
+  console.log(car === car.getThis());
 
   const car2 = {
     brand: "mitshubishi",
@@ -27,9 +30,14 @@ function runApp() {
   //params: brand, type, year
   function displayCarInfo(car) {
     console.log(`${car.brand} - ${car.type} - ${car.produceYear}`);
+    return function() {
+      console.log("I AM FUNCTION");
+    };
   }
 
-  car.displayInfo(car);
+  console.log(displayCarInfo(car));
+  const test = displayCarInfo(car2);
+  test();
 }
 
 runApp();
